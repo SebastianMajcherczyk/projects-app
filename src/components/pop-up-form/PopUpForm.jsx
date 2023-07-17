@@ -16,7 +16,7 @@ export const PopUpForm = () => {
 	});
 	return (
 		<>
-			<form>
+			<form className='popup-form'>
 				<div>
 					<label htmlFor='title'>Nazwa projektu</label>
 					<input
