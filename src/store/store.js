@@ -3,8 +3,13 @@ import { createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import { usersList } from '../users';
-
-const initialState = { usersList, loggedInUser: null, loginError: null };
+import { projectsList } from '../data/projects';
+const initialState = {
+	usersList,
+	loggedInUser: null,
+	loginError: null,
+	projectsList: [],
+};
 
 const reducer = (state = initialState, action) => {
 	switch (action.type) {
@@ -22,10 +27,10 @@ const reducer = (state = initialState, action) => {
 					usersList: state.usersList.map(user =>
 						user.email === loggedInUser.email ? { ...user, logged: true } : user
 					),
-                    loginError: null,
+					loginError: null,
 				};
 			} else {
-				return {...state, loginError: 'Błędne dane logowania'}
+				return { ...state, loginError: 'Błędne dane logowania' };
 			}
 		case 'LOG_OUT':
 			Cookies.set('token', '', { expires: 0 });
@@ -38,6 +43,12 @@ const reducer = (state = initialState, action) => {
 						: user
 				),
 			};
+		case 'GET_PROJECTS_LIST':
+			return {
+				...state,
+				projectsList: projectsList,
+			};
+
 		default:
 			return state;
 	}
@@ -51,6 +62,10 @@ const USER_LOG_ACTIONS = {
 	logOut: user => ({
 		type: 'LOG_OUT',
 		payload: user,
+	}),
+	getProjectsList: () => ({
+		type: 'GET_PROJECTS_LIST',
+		payload: '',
 	}),
 };
 
