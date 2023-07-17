@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react';
 import './dashboard.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { USER_LOG_ACTIONS } from '../../store/store';
+import { PopUpForm } from '../pop-up-form/PopUpForm';
 
 export const Dashboard = () => {
 	const [isOpenPopup, setIsOpenPopup] = useState(false);
-
+console.log(isOpenPopup);
 	const dispatch = useDispatch();
 
 	const { projectsList } = useSelector(state => state);
@@ -17,9 +18,7 @@ export const Dashboard = () => {
 	return (
 		<>
 			{isOpenPopup && (
-				<div className='popup'>
-					<h2>Dodawanie nowego projektu</h2>
-				</div>
+				<PopUpForm setIsOpenPopup={setIsOpenPopup} />
 			)}
 			<div className='dashboard'>
 				<table className='projects-list'>
