@@ -1,0 +1,21 @@
+.project {
+  min-height: 100vh;
+  margin: 10px auto;
+}
+.project h1 {
+  text-align: center;
+}
+.project table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.project th {
+  border: 1px solid black;
+  padding: 5px;
+  text-align: center;
+}
+.project td {
+  border: 1px solid black;
+  padding: 5px;
+  text-align: center;
+}/*# sourceMappingURL=Project.css.map */

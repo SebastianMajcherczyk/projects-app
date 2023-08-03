@@ -1,0 +1,93 @@
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  margin: 0 7px;
+  background-color: #fff;
+  width: 99%;
+  overflow: hidden;
+}
+.projects-container button {
+  margin: 10px 0;
+  width: 200px;
+}
+.projects-container p {
+  margin: 10px 0;
+}
+
+.list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  margin: 0 7px;
+  background-color: #fff;
+}
+.list button {
+  margin: 10px 0;
+  width: 200px;
+}
+.list p {
+  margin: 10px 0;
+}
+
+.list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  cursor: pointer;
+}
+
+.up {
+  transform: rotate(180deg);
+}
+
+.open {
+  max-height: 100%;
+}
+
+.close {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.search-project {
+  height: 30px;
+  border-radius: 15px;
+  margin: 5px 0;
+  padding: 5px;
+}
+
+.table-box {
+  width: 100%;
+  overflow: hidden;
+}
+
+.projects-list {
+  border-collapse: collapse;
+  border: 1px solid #e1e1e1;
+  border-radius: 0 0 10px 10px;
+  width: 100%;
+}
+.projects-list thead {
+  background-color: #e1e1e1;
+}
+.projects-list tr {
+  border-bottom: 1px solid #e1e1e1;
+}
+.projects-list th, .projects-list td {
+  padding: 5px 15px;
+}
+.projects-list td:nth-child(3) {
+  text-align: center;
+}
+
+.projects-list .last-row td {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}/*# sourceMappingURL=ProjectsList.css.map */

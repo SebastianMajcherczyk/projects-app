@@ -1,3 +1,28 @@
+@-webkit-keyframes scaleIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.appear-popup {
+  -webkit-animation: scaleIn 0.5s forwards;
+          animation: scaleIn 0.5s forwards;
+}
+
 .popup-container {
   position: fixed;
   top: 0;
@@ -12,6 +37,7 @@
 }
 
 .popup-form {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,7 +48,7 @@
   margin: 50px auto;
   border: 1px solid black;
   border-radius: 10px;
-  background-color: aquamarine;
+  background-color: #4e7eaf;
 }
 .popup-form div {
   display: flex;
@@ -39,4 +65,12 @@
 }
 .popup-form button {
   width: 70%;
+}
+
+.close-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 2em;
 }/*# sourceMappingURL=PopUpForm.css.map */

@@ -13,11 +13,8 @@ export const LoginPanel = () => {
 	const { loggedInUser, loginError } = useSelector(state => state);
 
 	useEffect(() => {
-		if (Cookies.get('token')) {
-			navigate('/dashboard');
-		}
 		if (loggedInUser) {
-			navigate('/dashboard');
+			navigate('/home');
 		}
 	}, [loggedInUser, navigate]);
 
@@ -44,6 +41,7 @@ export const LoginPanel = () => {
 			validationSchema,
 			onSubmit,
 		});
+	if (loggedInUser) return null;
 	return (
 		<div className='login-container'>
 			<div className='login-box'>
@@ -51,7 +49,7 @@ export const LoginPanel = () => {
 					className={loggedInUser ? 'hidden' : 'login-form'}
 					onSubmit={handleSubmit}
 					noValidate>
-					<div >
+					<div>
 						<label htmlFor='email'>Email</label>
 						<input
 							type='email'
